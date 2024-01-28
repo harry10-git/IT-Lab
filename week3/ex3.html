@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>The jQuery Example</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+
+
+  <body>
+    <div id = "mydiv">
+        Click on this to see a dialogue box.
+        <input type="button" id="button">
+        </div>
+
+
+
+    <script type = "text/javascript" language = "javascript">
+        $(document).ready(function() {
+        $('#button').click(function() {
+        $(this).val("Stop that!");
+        }); // end click
+        });
+        </script>
+
+  </body>

@@ -1,0 +1,74 @@
+<!-- 2. Design a calculator to perform basic arithmetic operations. Use textboxes and buttons
+to design web page. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Birthday Card</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="card-generator">
+        <h2>Card Generator</h2>
+
+        <label for="color">Choose a background color</label>
+        <input type="color" name="" id="color" />
+        <br />
+
+        <label for="font">Choose a font</label>
+        <!-- drop box with font names -->
+        <select name="" id="font">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+
+        <br />
+
+        <label for="font-size">Font Size</label>
+        <input type="number" name="" id="font-size" />
+        <br />
+
+        <label for="r1">None</label>
+        <input type="radio" name="border" id="r1" value="none" />
+        <br />
+        <label for="r2">Double</label>
+        <input type="radio" name="border" id="r2" value="double" />
+        <br />
+        <label for="r3">Solid</label>
+        <input type="radio" name="border" id="r2" value="solid" />
+        <br />
+
+        <label for="checkbox">Add default picture</label>
+        <input type="checkbox" name="image" id="checkbox" />
+        <br />
+
+        <label for="greeting">Enter the greeting message below</label> <br />
+        <textarea name="" id="greeting" cols="50" rows="10"></textarea>
+
+        <br />
+
+        <button>Update</button>
+      </div>
+
+      <div class="card-result">
+        <div style="display: flex; justify-content: center">
+          <div class="message-div overflow-wrap overflow-wrap--anywhere"></div>
+        </div>
+        <div style="display: flex; justify-content: center">
+          <img
+            src="https://media.istockphoto.com/id/1327043239/photo/happy-birthday-delicious-cupcake-with-candle-and-gift-box-on-wooden-table.jpg?b=1&s=170667a&w=0&k=20&c=ADyhuQYaL8pl0n-HCgoMneJi6z-4C4FJU6qatu3cSwY="
+            alt="random-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

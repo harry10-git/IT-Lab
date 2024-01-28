@@ -1,0 +1,11 @@
+.setup{
+    height: 300px;
+    width: 500px;
+}
+
+.img-div{
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

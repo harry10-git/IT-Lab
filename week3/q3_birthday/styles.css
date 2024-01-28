@@ -1,0 +1,28 @@
+br{
+    margin-top: 10px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    /* background-color: #2196F3; */
+    padding: 10px;
+}
+
+
+.card-result{
+    border: 1px black; 
+}
+.message-div{
+    font-size: 2rem;
+}
+
+.overflow-wrap{
+    width: 300px;
+    /* border: 1px solid #000; */
+    padding: 5px; 
+  }
+  
+  .overflow-wrap--anywhere{
+    overflow-wrap: anywhere;
+  }

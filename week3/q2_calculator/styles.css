@@ -1,0 +1,19 @@
+button{
+    padding: 10px 20px;
+    margin: 10px 10px;
+}
+
+.heading{
+    color: blueviolet;
+    font-size: 2.5rem;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.calculator-body{
+    border: black;
+    border-width: 2px;
+    border-style: dashed;
+    padding: 20px 40px;
+    display: inline-block;
+}

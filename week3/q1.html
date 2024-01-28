@@ -1,0 +1,66 @@
+<!-- 1. Write a web page which contains table with 3 X 3 dimensions (fill some data) and one
+image. Style the rows with alternate color. Move the table and image together from
+right to left when button is clicked. -->
+
+<html>
+  <head>
+    <title>The jQuery Example</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $("table tr:nth-child(2n)").css("background-color", "yellow");
+        $("table tr:nth-child(2n+1)").css("background-color", "green");
+        $("button").click(function () {
+          $("div").animate({ left: "250px" });
+        });
+      });
+    </script>
+
+    <style>
+      table,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="mydiv" style="position: absolute">
+      <table>
+        <tr id="row1">
+          <td>java</td>
+          <td>c++</td>
+          <td>python</td>
+        </tr>
+
+        <tr id="row2">
+          <td>android</td>
+          <td>ios</td>
+          <td>windows</td>
+        </tr>
+
+        <tr id="row3">
+          <td>apple</td>
+          <td>samsung</td>
+          <td>oneplus</td>
+        </tr>
+      </table>
+
+      <img
+        style="width: 200px; height: 150px"
+        src="https://cdn.firstcry.com/education/2022/12/11101254/Parts-Of-A-Computer-For-Kids.jpg"
+        alt="random-img"
+      />
+    </div>
+
+    <button style="position: relative; margin-top: 500px">
+      click to shift
+    </button>
+  </body>
+</html>
+  
