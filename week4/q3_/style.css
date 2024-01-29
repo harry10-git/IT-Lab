@@ -1,0 +1,13 @@
+img{
+    height: 200px;
+    width: auto;
+}
+
+.myFlex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-col{
+    flex-direction: column;
+}
