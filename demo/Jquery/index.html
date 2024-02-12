@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using jQuery without CDN</title>
+</head>
+<body>
+    <!-- Your HTML content goes here -->
+    <button>Click me</button>
+    <p>This is a paragraph.</p>
+
+    <!-- Include jQuery -->
+    <script src="jq.js"></script>
+    
+    <!-- Your JavaScript code that uses jQuery goes here -->
+    <script>
+        // Example jQuery code
+        $(document).ready(function() {
+            // jQuery code goes here
+            $("button").click(function() {
+                $("p").toggle();
+            });
+        });
+    </script>
+    
+</body>
+</html>
