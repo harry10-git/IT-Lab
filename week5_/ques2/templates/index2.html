@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Question 2</h2>
+
+<label for="emp">Emp ID:</label>
+
+<select name="emp" id="emp">
+    <option value="001">001</option>
+    <option value="002">002</option>
+    <option value="003">003</option>
+    <option value="004">004</option>
+</select>
+<br>
+
+<input type="date" name="date" id="date">
+
+<button onclick="handleClick()" > Am I eligible</button>
+</body>
+
+<script>
+    function handleClick(){
+        var dateString = document.getElementById("date").value;
+        var date = new Date(dateString);
+
+        var today = new Date();
+        var inputYear = date.getFullYear();
+        var currentYear = today.getFullYear();
+
+        if (currentYear - inputYear > 5) {
+        alert("You are eligible")
+    } else {
+         alert("NOT elegible")
+    }
+    }
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<h1>question 1</h1>
+
+<h1>Form for Teacher</h1>
+
+
+<input type="text" placeholder="enter name of student"/>
+<br/>
+<input type="date"/>
+<br/>
+<textarea
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="address of student"
+></textarea>
+<br/>
+<input type="number" placeholder="phone number"/>
+<br/>
+<input type="email" placeholder="name@example.com"/>
+<br/>
+<h4>Enter Marks</h4>
+<input type="number" name="" id="eng" placeholder="English"/>
+<input type="number" name="" id="phy" placeholder="Physics"/>
+<input type="number" name="" id="chem" placeholder="Chemistry"/>
+
+<button onclick="compute()">Submit</button>
+
+<br>
+
+<label id="result"></label>
+<script>
+    function compute() {
+
+      var eng = Number(document.getElementById("eng").value);
+      var phy = Number(document.getElementById("phy").value);
+      var chem = Number(document.getElementById("chem").value);
+      marks = [eng, phy, chem];
+
+
+      var sum =0 ;
+
+      for (let i = 0; i < marks.length; i++) {
+        sum += marks[i];
+      }
+
+      sum = sum/3
+
+       document.getElementById("result").innerHTML = "Average is: " + sum;
+    }
+</script>
+</body>
+
+
+</html>
