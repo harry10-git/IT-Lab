@@ -1,0 +1,74 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="{% static 'style4.css' %}">
+</head>
+<body>
+<h2 class="heading">hello world 4</h2>
+
+<div class="grid-container">
+    <div class="magazine-gen">
+        generator
+        <br>
+
+        <label for="message"></label>
+        <input type="text" name="message" id="message">
+        <br>
+        <input type="file" id="photo">
+        <br>
+        <input type="color" name="color" id="color">
+        <br>
+        <label for="font-size"></label>
+        <input type="number" name="font-size" id="font-size">
+        <button>submit</button>
+    </div>
+
+    <div class="result">
+        result
+          <div class="text-message"></div>
+        <br>
+       <img src="" alt="Selected Image" class="selected-image">
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("button").bind("click", function () {
+
+        var message =  $("#message").val();
+         $(".text-message").html(message);
+
+
+        var photo = $("#photo").val();
+        var parts = photo.split("\\");
+        var filename = parts[parts.length - 1];
+        var imagePath = "images/" + filename;
+
+        $(".selected-image").attr("src", imagePath);
+
+        var color = $('#color').val();
+        $(".result").css({ "background-color": color });
+
+         var fontSize = $('#font-size').val();
+         $(".result").css({ "font-size": fontSize + 'px'  });
+
+
+        console.log(filename)
+
+     });
+});
+
+
+</script>
+
+</body>
+</html>
