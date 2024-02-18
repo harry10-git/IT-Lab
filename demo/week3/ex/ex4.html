@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="mydiv">
+      Click on this to see a dialogue box.
+      <input type="button" id="button" />
+    </div>
+  </body>
+  <script src="jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#button").click(function () {
+        $(this).val("Stop that!");
+      }); // end click
+      $("div").hover(
+        function () {
+          $(this).css({ "background-color": "red" });
+        },
+        function () {
+          $(this).css({ "background-color": "transparent" });
+        }
+      );
+    });
+  </script>
+</html>

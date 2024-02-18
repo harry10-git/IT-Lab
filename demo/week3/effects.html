@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hide-show">This paragraph is for hide and show</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <br><br>
+    <hr>
+    <p id="toggle-p">This paragraph is for toggle</p>
+    <button id="toggle">Toggle</button>
+    <br><br>
+    <hr>
+
+    <div id="fade-div" style="width: 100px; height: 100px; background-color: red; display: none;"></div>
+    <button id="fade-in">fade in</button>
+    <br><br>
+    <hr>
+    <button id="animate">Animate</button>
+    <div id="animate-div" style="position: absolute;height: 100px; width: 100px; background-color: greenyellow;"></div>
+
+
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#hide').click(function(){
+            $('#hide-show').hide();
+        });
+        $('#show').click(function(){
+            $('#hide-show').show();
+        });
+
+        $('#toggle').click(function(){
+            $('#toggle-p').toggle();
+        });
+
+        $('#fade-in').click(function(){
+            $('#fade-div').fadeIn(2000);
+        });
+        $('#animate').click(function(){
+            $('#animate-div').animate({
+                left: '+=250px',
+                height: '+=150px',
+                width: '+=150px',
+            })
+        })
+
+        
+    })
+</script>
+</html>

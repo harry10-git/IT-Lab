@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row align-items-center justify-content-center border" style="height: 500px;">
+            <div class="col-4">
+                Bday form
+                <input type="number" id="fontSize">
+                show<input type="checkbox" name="checkbox" id="show" value="visible">
+                hide<input type="checkbox" name="checkbox" id="hidden" value="hidden">
+
+                <button id="mySubmit">submit</button>
+            </div>
+            <div class="col-4 update-this">
+                Result
+
+                <h4 id="cb-result">hide and show</h4>
+              
+            </div>
+        </div>
+    </div>
+</body>
+<script src="bootstrap/js/bootstrap.bundle.js"></script>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#mySubmit').click(function(){
+            var fs = parseInt($('#fontSize').val());
+            $('.update-this').css({
+                'font-size': fs + 'px'
+            });
+
+            var disProp = $("input[type='checkbox']:checked").val();
+            // console.log(disProp);
+            if(disProp === 'hidden'){
+                $('#cb-result').css({
+                    'visibility': disProp,
+                })
+            }
+
+            if(disProp === 'visible'){
+                $('#cb-result').css({
+                    'visibility': disProp,
+                })
+            }
+        })
+    })
+</script>
+</html>

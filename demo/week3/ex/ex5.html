@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>checkbox in jquery</h1>
+
+    <input type="checkbox" value="op1"> op1
+    <input type="checkbox" value="op2"> op2
+    <input type="checkbox" value="op3"> op3
+    <br>
+    <input id="btnSubmit" type="submit" value="submit" />
+    <div id="result-div">
+
+    </div>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#btnSubmit').click(function(){
+            // get the checked checkboxes
+            var checked = $('input[type="checkbox"]:checked');
+
+            var result = '';
+            
+            if(checked.length > 0){
+                checked.each(function(){
+                    // console.log($(this).val());
+                    result += $(this).val() + ' ';
+                })
+            }
+            // console.log(result);
+            $('#result-div').html(result)
+
+        })
+    })
+</script>
+</html>

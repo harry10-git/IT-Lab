@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Buttons</title>
+</head>
+<body>
+    <h2>Radio Buttons Use</h2>
+    <input type="radio" id="option1" name="options" class="radio" value="Option 1"> Option 1<br>
+    <input type="radio" id="option2" name="options" class="radio" value="Option 2"> Option 2<br>
+    <input type="radio" id="option3" name="options" class="radio" value="Option 3"> Option 3<br>
+
+    <button id="showSelected">Show Selected</button>
+    <div id="result"></div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#showSelected').click(function(){
+            var selected = $("input[class='radio']:checked").val();
+            if(selected){
+            $("#result").text("Selected option: " + selected);
+        } else {
+            $("#result").text("No option selected.");
+        }
+
+        })
+    })
+</script>
+</html>
