@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+	<center>
+		<h1>GeeksforGeeks</h1>
+	</center>
+	<ul id="myList"></ul>
+	<script>
+		let data = ["Ram", "Shyam", "Sita", "Gita"];
+		let list = document.getElementById("myList");
+		for (i = 0; i < data.length; ++i) {
+			let li = document.createElement('li');
+			li.innerText = data[i];
+			list.appendChild(li);
+		}
+	</script>
+</body>
+
+</html>
