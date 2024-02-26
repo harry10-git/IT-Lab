@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 form</title>
+</head>
+<body>
+
+    <h2>Question 4 form</h2>
+    <hr>
+    <form action="q4" method="post">
+        {% csrf_token %}
+         
+        HP<input type="radio" name="radio" value="HP">
+        Samsung <input type="radio" name="radio" value="Samsung">
+        Motorola <input type="radio" name="radio" value="Motorola">
+        Apple <input type="radio" name="radio" value="Apple">
+        
+        <br>
+        mobile<input type="checkbox" name="mobile" value='mobile'>
+        laptop<input type="checkbox" name="laptop" value='laptop'>
+        <br>
+        <p>quantity:</p>
+        <input type="number" name="quantity">
+        <br><br>
+        <input type="submit">
+
+    </form>
+</body>
+</html>

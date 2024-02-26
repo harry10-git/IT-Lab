@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>car manufacturer form</h1>
+    <form action="q1" method="post">
+        {% csrf_token %}
+        <p>manufacturer: </p>
+        <select name="car-manufacturer">
+            <option value="Mahindra">Mahindra</option>
+            <option value="Tata">Tata</option>
+            <option value="Hyundai">Hyundai</option>
+        </select>
+
+        <p>model:</p>
+        <input type="text" name="model">
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
