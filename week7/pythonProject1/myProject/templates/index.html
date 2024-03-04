@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question 2</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <p>name:</p>
+        <input type="text" name="name">
+
+        <p>Company:</p>
+        <input type="text" name="company">
+
+        <p>Salary:</p>
+        <input type="number" name="salary">
+
+        <p>Street:</p>
+        <input type="text" name="street">
+
+        <p>City:</p>
+        <input type="text" name="city">
+
+
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <hr>
+    <h3>Find employees of a company</h3>
+
+    <form action="{% url 'find_people' %}"  method="post">
+        {% csrf_token %}
+        <p>Company:</p>
+        <input type="text" name="companyF">
+        <input type="submit">
+    </form>
+
+</body>
+</html>
