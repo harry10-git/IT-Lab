@@ -15,4 +15,24 @@ class Product(models.Model):
     title = models.CharField(max_length= 100)
     price = models.IntegerField()
     description = models.CharField(max_length = 1000)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length= 100)
+    visits = models.IntegerField()
+    likes = models.IntegerField()
+
+class Page(models.Model):
+    category = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    url = models.URLField()
+    views = models.IntegerField()
+
+
+class Human(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    address = models.CharField(max_length=255)
+    city = models.CharField(max_length=100)
     

@@ -1,0 +1,53 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Human Management System</title>
+</head>
+<body>
+    <h1>Human Management System</h1>
+    <form id="updateForm" method="post" action="">
+
+        {% csrf_token %}
+        <select id="humanDropdown" name="human_id" onchange="selectHuman()">
+            {% for human in humans %}
+            <option value="{{ human.id }}">{{ human.first_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <input type="text" id="id_first_name" name="first_name" placeholder="First Name" required><br><br>
+        <input type="text" id="id_last_name" name="last_name" placeholder="Last Name" required><br><br>
+        <input type="text" id="id_phone" name="phone" placeholder="Phone" required><br><br>
+        <input type="text" id="id_address" name="address" placeholder="Address" required><br><br>
+        <input type="text" id="id_city" name="city" placeholder="City" required><br><br>
+        <button type="submit">Update</button>
+        <button type="button" onclick="deleteHuman()">Delete</button>
+    </form>
+
+    <script>
+        function selectHuman() {
+            var dropdown = document.getElementById("humanDropdown");
+            var selectedId = dropdown.options[dropdown.selectedIndex].value;
+            var selectedHuman = JSON.parse('{{ humans|safe }}').find(human => human.id == selectedId);
+            document.getElementById("id_first_name").value = selectedHuman.first_name;
+            document.getElementById("id_last_name").value = selectedHuman.last_name;
+            document.getElementById("id_phone").value = selectedHuman.phone;
+            document.getElementById("id_address").value = selectedHuman.address;
+            document.getElementById("id_city").value = selectedHuman.city;
+    
+            // Set the form action dynamically
+            document.getElementById("updateForm").action = "{% url 'update_human' 0 %}".replace("0", selectedId);
+        }
+    
+        function deleteHuman() {
+            var dropdown = document.getElementById("humanDropdown");
+            var selectedId = dropdown.options[dropdown.selectedIndex].value;
+            if (confirm("Are you sure you want to delete this human?")) {
+                window.location.href = "/delete/" + selectedId;
+            }
+        }
+    </script>
+    
+</body>
+</html>

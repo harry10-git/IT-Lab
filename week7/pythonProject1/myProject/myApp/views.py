@@ -1,5 +1,31 @@
 from django.shortcuts import render, redirect
-from .models import Works, Lives, Product
+from django.http import JsonResponse
+from .models import Works, Lives, Product, Category, Page
+
+from .models import Human
+from .forms import HumanForm
+
+
+
+
+def ques1(request):
+    if request.method == 'POST':
+        cat_name = request.POST.get('add1')  # Get the category name from the form
+        try:
+            category = Category.objects.get(name=cat_name)  # Get the category object
+            category.likes += 1  # Increment likes
+            category.save()  # Save the updated category
+            print(category.likes)  # Print updated likes
+        except Category.DoesNotExist:
+            print("Category does not exist")
+        return redirect('/q1')  # Redirect after processing POST request
+    else:
+        all_pages = Page.objects.all()
+        all_categories = Category.objects.all()
+        return render(request, 'q1.html', {'all_pages': all_pages, 'all_categories': all_categories})
+
+
+
 
 def ques2(request):
     if request.method == 'POST':
@@ -53,3 +79,20 @@ def q4form(request):
         return redirect('/q4')
     else:
         return render(request, 'q4_form.html')
+    
+def index(request):
+    humans = Human.objects.all()
+    form = HumanForm()
+    return render(request, 'q5.html', {'humans': humans, 'form': form})
+
+def update_human(request, human_id):
+    human = Human.objects.get(pk=human_id)
+    form = HumanForm(request.POST, instance=human)
+    if form.is_valid():
+        form.save()
+    return redirect('index')
+
+def delete_human(request, human_id):
+    human = Human.objects.get(pk=human_id)
+    human.delete()
+    return redirect('index')

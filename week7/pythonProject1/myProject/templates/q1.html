@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <h1>List of all pages</h1>
+        {% for page in all_pages %}
+            <tr>
+                <td>
+                    <h3>{{ page.title }}</h3>
+                </td>
+                <td>
+                    <a href="{{ page.url }}">Click to visit</a>
+                </td>
+                <td>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="{{page.category}}" name="add1">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+
+<h1>Categories</h1>
+{% for cat in all_categories  %}
+    <p>{{cat.name}}</p>
+    <p>{{cat.likes}}</p>
+{% endfor %}
+    
+</body>
+</html>
